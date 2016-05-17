@@ -1,11 +1,3 @@
-/* **** Global Variables **** */
-// try to elminate these global variables in your project, these are here just to start.
-
-var playersGuess,
-    winningNumber
-
-
-
 /* **** Guessing Game Functions **** */
 
 // Generate the Winning Number
@@ -30,59 +22,71 @@ function isValidInput(input) {
 // Fetch the Players Guess
 
 function playersGuessSubmission(num){ 
-  $("#submit-number").click(function() {
-    var input = $("#number").val();
-    var tern = isValidInput(input);
-    if (!tern) {
-      $("#textfield").html("A NUMBER PLEASE")
-      return "";
-    } else if (tern === 1) {
-      $("#textfield").html("A NUMBER BETWEEN 1-100 PLEASE")
-      return "";
-    } else if (checkGuess(num)){
-      return true;
-    } else {
-      return input
-    }
-  })
+  var input = $("#number").val();
+  var tern = isValidInput(input);
+  if (tern === 0) {
+    $("#number").val(""); 
+    $("#textfield").html("A NUMBER PLEASE")
+    return "";
+  } else if (tern === 1) {
+    $("#number").val(""); 
+    $("#textfield").html("A NUMBER BETWEEN 1-100 PLEASE")
+    return "";
+  } else if (checkGuess(num)){
+    $("#textfield").html("YOU GOT IT!!!")
+    return "";
+  } else {
+    $("#number").val("");  
+    return input
+  }
 }
 
 // Determine if the next guess should be a lower or higher number
 
-function lowerOrHigher(num){
-  var input = $("#number").val();
-  return (num > input) ? 0 : 1;
+function lowerOrHigher(num, guess){
+  return (num > guess) ? 0 : 1;
 }
 
 // Check if the Player's Guess is the winning number 
 
 function checkGuess(num){
+  // need to make sure new guess is not a duplicate
+  // store guess in an array with all previous guess
   var input = $("#number").val();
   return (num == input) ? true : false;
 }
 
 // Create a provide hint button that provides additional clues to the "Player"
 
-function provideHint(num){
-  var input = $("#number").val();
-  if (isValidInput(input) == 2) {
+function provideHint(num, guess){
+  if (guess == ("" || -1)) {
+    $("#textfield").html("A NUMBER BETWEEN 1-100 PLEASE")  
+  } else {
     var str = ""
-    if (lowerOrHigher(num)) {
+    if (!lowerOrHigher(num, guess)) {
       str += "HIGHERRRR"
     } else {
       str += "LOWERRRR"
     }
-    $("#textfield").html(str) 
-  } else {
-    $("#textfield").html("A NUMBER BETWEEN 1-100 PLEASE") 
+    $("#textfield").html(str)   
   }
 }
 
 // Allow the "Player" to Play Again
 
 function playAgain(){
-  // add code here
+  theNumber = generateWinningNumber();
+  numGuess = 5;
+  $("#textfield").html("GUESS A NUMBER BETWEEN 1-100") 
+  $("#number").val("");
 }
 
+function animateText() {
+  $("#textfield").addClass("animate");
+  $("#textfield").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
+    function(e) {
+    $("#textfield").removeClass("animate");
+  });
+}
 
 /* **** Event Listeners/Handlers ****  */

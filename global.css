@@ -56,9 +56,37 @@
 }
 #textfield {
     font-family: 'Droid Sans', sans-serif;
-    margin-top:10px;
-    margin-bottom: 10px;
-    font-size: 1.7vw;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 2vw;
+}
+#textfield.animate {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;   
+}
+@keyframes pulse {
+    0% {
+        color: rgba(127, 255, 0, 1);
+        font-size: 2.5vw;
+    }
+    
+    33% {
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vw; 
+    }
+
+    66% {
+        color: rgba(127, 255, 0, 1);
+        font-size: 2.5vw;     
+    }
+
+    100% { 
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vw;  
+    }
 }
 button {
     font-family: 'Oswald', sans-serif;
@@ -92,14 +120,14 @@ button:focus{
 button:active {
     font-size: 5.5vw;
 }
-.cell-3 {   
+.cell-1 {   
     left: 2%;
 }
-.cell-4{
+.cell-2{
     right: 8%;
     top:-5px;
 }
-.cell-5{
+.cell-3{
     top:-10px;
     left: 2%;
 }
