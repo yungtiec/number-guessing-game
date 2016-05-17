@@ -16,9 +16,9 @@
   <body>
     <div class="container">
       <div class="cell cell-1">
-            <input type="text" id="number-input" class="" placeholder="#">
+            <input type="text" name="number" id="number" class="" placeholder="#">
       </div>
-      <div class="cell cell-2">
+      <div class="cell" id="textfield">
           GUESS A NUMBER BETWEEN 1-100
       </div>
       <div class="cell button-cell cell-3">
@@ -31,6 +31,20 @@
           <button type="submit" id="second-chance">SECOND CHANCE</button>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="guessingGame.js"></script>
+    <script>
+      $(function() {
+        var theNumber = generateWinningNumber();
+        console.log(theNumber)
+        var playerGuess = playersGuessSubmission(theNumber);
+        $("#hint").click(function() {
+          provideHint(theNumber)
+        })
+
+
+      })
+    </script>
   </body>
   
 </html>

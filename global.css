@@ -11,7 +11,7 @@
     position: relative;
     top: 20%;
 }     
-#number-input {
+#number {
     font-family: 'Oswald', sans-serif;
     border: none;
     width: 400px;
@@ -24,7 +24,7 @@
     text-shadow:         6px 6px 0px rgba(127, 255, 0, 1);
     */
 }
-#number-input:focus {
+#number:focus {
     outline: none;
 }
 ::-webkit-input-placeholder {
@@ -54,7 +54,7 @@
     -moz-text-shadow:    6px 6px 0px rgba(127, 255, 0, 1);
     text-shadow:         6px 6px 0px rgba(127, 255, 0, 1);
 }
-.cell-2{
+#textfield {
     font-family: 'Droid Sans', sans-serif;
     margin-top:10px;
     margin-bottom: 10px;
