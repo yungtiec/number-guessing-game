@@ -36,37 +36,18 @@
     <script>
       $(function() {
         // initialize
-        var theNumber = generateWinningNumber();
-        var numGuess = 5;
-        var curGuess = -1;
+        var game = new Game();
         // submit
         $("#submit-number").click(function() {
-          curGuess = playersGuessSubmission(theNumber);
-          // valid input and not gameover
-          if (curGuess && numGuess > 1) {
-            numGuess--;
-            $("#textfield").html("OOPS, YOU HAVE " + numGuess + " GUESSES LEFT.");
-          // gameover
-          } else if (numGuess <= 1) {
-            numGuess--;
-            $("#textfield").html("OOPS, GAME OVER.");
-          }          
-          animateText();
+          game.playersGuessSubmission();
         });
-        console.log(numGuess)
         // hint
         $("#hint").click(function() {
-          // check if the game is over
-          if (numGuess > 0) {
-            provideHint(theNumber, curGuess);
-          } else {
-            $("#textfield").html("OOPS, GAME OVER.");
-          }
-          animateText();
+          game.provideHint();
         })
         // reset
         $("#reset").click(function() {
-          playAgain();
+          game.playAgain();
         })
 
 
