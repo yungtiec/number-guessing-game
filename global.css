@@ -96,16 +96,22 @@ button:active {
 }
 .cell-3 {   
     left: -100%;
+}
+.cell-3.slide {
     animation: slide-3 0.5s forwards;
 }
 .cell-4{
     right: -100%;
     top:-5px;
+}
+.cell-4.slide {
     animation: slide-4 0.5s forwards;
 }
 .cell-5{
     left: -100%;
     top:-10px;
+}
+.cell-5.slide {
     animation: slide-5 0.5s forwards;
 }
 /* button slide in animation */

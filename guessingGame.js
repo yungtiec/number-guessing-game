@@ -20,6 +20,7 @@ function generateWinningNumber(){
 // Fetch the Players Guess
 
 Game.prototype.playersGuessSubmission = function(){ 
+    console.log(this.theNumber)
   var input = $("#number").val();
   if (this.numGuess >= 1) {
     // not gameover yet
@@ -42,7 +43,15 @@ Game.prototype.playersGuessSubmission = function(){
           this.numGuess--;       
           if (this.checkGuess(input)) {
             // correct guess
+            $("#number").val("WELL PLAY");
             $("#textfield").html("YOU GOT IT!!!")
+            $("#reset").html("PLAY AGAIN?")
+            $("#number").toggleClass("playerWon");
+            $("div.cell-3").animate({left: "-100%"}, 1000, function() {
+            });
+            $("div.cell-4").animate({right: "-100%"}, 1000, function() {
+            });
+            $(".cell-5").toggleClass("");
           } else {
             // wrong guess
             if (this.numGuess === 0) {
@@ -141,6 +150,17 @@ function animateText() {
   $("#textfield").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
     function(e) {
     $("#textfield").removeClass("animate");
+  });
+}
+
+function animateButton() {
+    $(".button-cell").addClass("slide");
+    $(".button-cell").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
+    function(e) {
+        $(".cell-3").css("left","2%");
+        $(".cell-4").css("right","8%");
+        $(".cell-5").css("left","2%");
+        $(".button-cell").removeClass("slide");
   });
 }
 
