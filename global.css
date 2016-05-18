@@ -18,11 +18,6 @@
     max-height: 420px;
     text-align: center;
     font-size: 30vh;
-    /* text shadow, a bit too much...
-    -webkit-text-shadow: 6px 6px 0px rgba(127, 255, 0, 1);
-    -moz-text-shadow:    6px 6px 0px rgba(127, 255, 0, 1);
-    text-shadow:         6px 6px 0px rgba(127, 255, 0, 1);
-    */
 }
 #number:focus {
     outline: none;
@@ -67,32 +62,6 @@
     animation-timing-function: ease;
     animation-iteration-count: 1;   
 }
-@keyframes pulse {
-    0% {
-        color: rgba(0, 0, 0, 1); 
-        font-size: 2vh; 
-    }
-    
-    25% {
-        color: rgba(127, 255, 0, 1);
-        font-size: 2.5vh;
-    }
-    
-    50% {
-        color: rgba(0, 0, 0, 1); 
-        font-size: 2vh; 
-    }
-
-    75% {
-        color: rgba(127, 255, 0, 1);
-        font-size: 2.5vh;     
-    }
-
-    100% { 
-        color: rgba(0, 0, 0, 1); 
-        font-size: 2vh;  
-    }
-}
 button {
     font-family: 'Oswald', sans-serif;
     top:-15px;
@@ -125,14 +94,112 @@ button:focus{
 button:active {
     font-size: 7.5vh;
 }
-.cell-1 {   
-    left: 2%;
+.cell-3 {   
+    left: -100%;
+    animation: slide-3 0.5s forwards;
 }
-.cell-2{
-    right: 8%;
+.cell-4{
+    right: -100%;
     top:-5px;
+    animation: slide-4 0.5s forwards;
 }
-.cell-3{
+.cell-5{
+    left: -100%;
     top:-10px;
-    left: 2%;
+    animation: slide-5 0.5s forwards;
+}
+/* button slide in animation */
+@-moz-keyframes slide-3 {
+    100% {left: 2%}
+}
+@-webkit-keyframes slide-3 {
+    100% {left: 2%}
+}
+@keyframes slide-3 {
+    100% {left: 2%}
+}
+@-moz-keyframes slide-4 {
+    100% {right: 8%;}
+}
+@-webkit-keyframes slide-4 {
+    100% {right: 8%;}
+}
+@keyframes slide-4 {
+    100% {right: 8%;}
+}
+@keyframes slide-5 {
+    100% {left: 2%;}
+}
+@-moz-keyframes slide-5 {
+    100% {left: 2%;}
+}
+@-webkit-keyframes slide-5 {
+    100% {left: 2%;}
+}
+/* textfield pulsing animation */
+@-moz-keyframes pulse {
+    0% {
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh; 
+    }
+    25% {
+        color: rgba(127, 255, 0, 1);
+        font-size: 2.1vh;
+    }
+    50% {
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh; 
+    }
+    75% {
+        color: rgba(127, 255, 0, 1);
+        font-size: 2.1vh;     
+    }
+    100% { 
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh;  
+    }
+}
+@-webkit-keyframes pulse {
+    0% {
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh; 
+    }
+    25% {
+        color: rgba(127, 255, 0, 1);
+        font-size: 2.1vh;
+    }
+    50% {
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh; 
+    }
+    75% {
+        color: rgba(127, 255, 0, 1);
+        font-size: 2.1vh;     
+    }
+    100% { 
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh;  
+    }
+}
+@keyframes pulse {
+    0% {
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh; 
+    }
+    25% {
+        color: rgba(127, 255, 0, 1);
+        font-size: 2.1vh;
+    }
+    50% {
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh; 
+    }
+    75% {
+        color: rgba(127, 255, 0, 1);
+        font-size: 2.1vh;     
+    }
+    100% { 
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh;  
+    }
 }
