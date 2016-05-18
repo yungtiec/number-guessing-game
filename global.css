@@ -17,7 +17,7 @@
     width: 400px;
     max-height: 420px;
     text-align: center;
-    font-size: 25vw;
+    font-size: 30vh;
     /* text shadow, a bit too much...
     -webkit-text-shadow: 6px 6px 0px rgba(127, 255, 0, 1);
     -moz-text-shadow:    6px 6px 0px rgba(127, 255, 0, 1);
@@ -59,7 +59,7 @@
     margin-top: 10px;
     margin-bottom: 20px;
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 2vh;
 }
 #textfield.animate {
     animation-name: pulse;
@@ -69,29 +69,34 @@
 }
 @keyframes pulse {
     0% {
-        color: rgba(127, 255, 0, 1);
-        font-size: 2.5vw;
+        color: rgba(0, 0, 0, 1); 
+        font-size: 2vh; 
     }
     
-    33% {
+    25% {
+        color: rgba(127, 255, 0, 1);
+        font-size: 2.5vh;
+    }
+    
+    50% {
         color: rgba(0, 0, 0, 1); 
-        font-size: 2vw; 
+        font-size: 2vh; 
     }
 
-    66% {
+    75% {
         color: rgba(127, 255, 0, 1);
-        font-size: 2.5vw;     
+        font-size: 2.5vh;     
     }
 
     100% { 
         color: rgba(0, 0, 0, 1); 
-        font-size: 2vw;  
+        font-size: 2vh;  
     }
 }
 button {
     font-family: 'Oswald', sans-serif;
     top:-15px;
-    font-size: 5vw;
+    font-size: 7vh;
     border: 5px solid black;
     background-color: white;
     padding: 3px 20px 3px 20px;
@@ -118,7 +123,7 @@ button:focus{
     outline: none;
 }
 button:active {
-    font-size: 5.5vw;
+    font-size: 7.5vh;
 }
 .cell-1 {   
     left: 2%;
