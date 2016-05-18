@@ -9,14 +9,6 @@ function Game() {
   this.guesses = [];
 }
 
-// Generate the Winning Number
-
-function generateWinningNumber(){
-  var max = 100;
-  var min = 1;
-  return Math.floor(Math.random()*(max-min+1)+min);
-}
-
 // Fetch the Players Guess
 
 Game.prototype.playersGuessSubmission = function(){ 
@@ -43,21 +35,7 @@ Game.prototype.playersGuessSubmission = function(){
           this.numGuess--;       
           if (this.checkGuess(input)) {
             // correct guess           
-            $("#reset").html("PLAY AGAIN?")
-            $("#textfield").hide();
-            $("div.cell-3").animate({left: "-100%"}, 1000, function() {
-              $(this).hide()
-            });
-            $("div.cell-4").animate({right: "-100%"}, 1000, function() {
-              $(this).hide()
-            });
-            $("div.cell-5").animate({left: "-100%"}, 1000, function() {
-              $(this).hide();
-              $("#number").val("WELL PLAY");
-              $("#number").toggleClass("playerWon");
-              $("#number.playerWon").prop("disabled","true");
-              $(".cell-6").toggleClass("display-on");
-            });
+            showWinningMessage()
           } else {
             // wrong guess
             if (this.numGuess === 0) {
@@ -162,6 +140,16 @@ Game.prototype.playAgainWon = function(){
   $("div.cell-5").fadeIn();
 }
 
+// Generate the Winning Number
+
+function generateWinningNumber(){
+  var max = 100;
+  var min = 1;
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+// textfield animation
+
 function animateText() {
   $("#textfield").addClass("animate");
   $("#textfield").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
@@ -169,6 +157,8 @@ function animateText() {
     $("#textfield").removeClass("animate");
   });
 }
+
+// button slide-in animation
 
 function animateButton() {
     $(".button-cell").addClass("slide");
@@ -178,6 +168,26 @@ function animateButton() {
         $(".cell-4").css("right","8%");
         $(".cell-5").css("left","2%");
         $(".button-cell").removeClass("slide");
+  });
+}
+
+// Winning message animation
+
+function showWinningMessage() {
+  $("#reset").html("PLAY AGAIN?")
+  $("#textfield").hide();
+  $("div.cell-3").animate({left: "-100%"}, 1000, function() {
+    $(this).hide()
+  });
+  $("div.cell-4").animate({right: "-100%"}, 1000, function() {
+    $(this).hide()
+  });
+  $("div.cell-5").animate({left: "-100%"}, 1000, function() {
+    $(this).hide();
+    $("#number").val("WELL PLAY");
+    $("#number").toggleClass("playerWon");
+    $("#number.playerWon").prop("disabled","true");
+    $(".cell-6").toggleClass("display-on");
   });
 }
 
