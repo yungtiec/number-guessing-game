@@ -41,6 +41,12 @@
         $("#submit-number").click(function() {
           game.playersGuessSubmission();
         });
+        $("#number").keypress(function(e) {
+          if(e.which == 13) {
+            // enter key pressed
+            $("#submit-number").click();
+          }
+        })
         // hint
         $("#hint").click(function() {
           game.provideHint();
