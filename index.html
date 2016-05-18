@@ -28,7 +28,10 @@
           <button type="submit" id="hint">NEED A HINT?</button>
       </div>
       <div class="cell button-cell cell-5">
-          <button type="submit" id="reset">SECOND CHANCE</button>
+          <button type="reset" id="reset">SECOND CHANCE</button>
+      </div>
+      <div class="cell button-cell cell-6">
+          <button type="reset" id="reset-won">PLAY AGAIN?</button>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -56,7 +59,10 @@
         $("#reset").click(function() {
           game.playAgain();
         })
-
+        // reset after player has won
+        $("#reset-won").click(function() {
+          game.playAgainWon();
+        })
 
       })
     </script>

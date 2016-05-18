@@ -42,16 +42,22 @@ Game.prototype.playersGuessSubmission = function(){
           // not a duplicate   
           this.numGuess--;       
           if (this.checkGuess(input)) {
-            // correct guess
-            $("#number").val("WELL PLAY");
-            $("#textfield").html("YOU GOT IT!!!")
+            // correct guess           
             $("#reset").html("PLAY AGAIN?")
-            $("#number").toggleClass("playerWon");
+            $("#textfield").hide();
             $("div.cell-3").animate({left: "-100%"}, 1000, function() {
+              $(this).hide()
             });
             $("div.cell-4").animate({right: "-100%"}, 1000, function() {
+              $(this).hide()
             });
-            $(".cell-5").toggleClass("");
+            $("div.cell-5").animate({left: "-100%"}, 1000, function() {
+              $(this).hide();
+              $("#number").val("WELL PLAY");
+              $("#number").toggleClass("playerWon");
+              $("#number.playerWon").prop("disabled","true");
+              $(".cell-6").toggleClass("display-on");
+            });
           } else {
             // wrong guess
             if (this.numGuess === 0) {
@@ -143,6 +149,17 @@ Game.prototype.playAgain = function(){
   this.guesses = [];
   $("#textfield").html("GUESS A NUMBER BETWEEN 1-100") 
   $("#number").val("");
+}
+
+Game.prototype.playAgainWon = function(){
+  this.playAgain();
+  $("#number").toggleClass("playerWon");
+  $("input#number").removeAttr('disabled');
+  $(".cell-6").toggleClass("display-on");
+  $("#textfield").fadeIn();
+  $("div.cell-3").fadeIn();
+  $("div.cell-4").fadeIn();
+  $("div.cell-5").fadeIn();
 }
 
 function animateText() {

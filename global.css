@@ -19,6 +19,16 @@
     text-align: center;
     font-size: 30vh;
 }
+#number.playerWon {
+    font-size: 20vw;
+    width: 100%;
+    margin-top: 5%;
+    color: #4CF016;
+    -webkit-text-shadow: 6px 6px 0px rgba(127, 255, 0, 1);
+    -moz-text-shadow:    6px 6px 0px rgba(127, 255, 0, 1);
+    text-shadow:         6px 6px 0px rgba(127, 255, 0, 1);
+    animation: bounce-in 0.5s;
+}
 #number:focus {
     outline: none;
 }
@@ -114,6 +124,14 @@ button:active {
 .cell-5.slide {
     animation: slide-5 0.5s forwards;
 }
+.cell-6 {
+    display: none;
+}
+.cell-6.display-on {
+    display: block;
+    margin-top: 8%;
+    animation: bounce-in 0.5s;
+}
 /* button slide in animation */
 @-moz-keyframes slide-3 {
     100% {left: 2%}
@@ -208,4 +226,38 @@ button:active {
         color: rgba(0, 0, 0, 1); 
         font-size: 2vh;  
     }
+}
+/* Winning message bounce in animation */
+@keyframes bounce-in {
+    0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-moz-keyframes bounce-in {
+    0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes bounce-in {
+    0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
