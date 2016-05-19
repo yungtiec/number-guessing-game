@@ -66,13 +66,14 @@ function Game() {
 
   gamePrototype.lowerOrHigher = function(guess) {
     var str = (this.theNumber > guess) ? "HIGHERRRR" : "LOWERRRR";
+    var numGuessStr = "<br>you have " + this.numGuess + " guesses left.";
     var d = Math.abs(this.theNumber - guess);
     if (d <= 10) {
-      str += ", within 10 digits ;)";
+      str += ", within 10 digits ;)" + numGuessStr; 
     } else if (d > 10 && d <= 20) {
-      str += ", less than 20 digits away ;)";
+      str += ", less than 20 digits away ;)" + numGuessStr;
     } else {
-      str += ", more than 20 digits away!"
+      str += ", more than 20 digits away!" + numGuessStr;
     }
     $("#textfield").html(str)  
   }
