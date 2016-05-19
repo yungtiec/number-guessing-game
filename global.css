@@ -6,6 +6,7 @@
     -webkit-align-items: center; /* Safari */
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
 }
 .cell {
     position: relative;
@@ -22,7 +23,6 @@
 #number.playerWon {
     font-size: 20vw;
     width: 100%;
-    margin-top: 5%;
     color: #4CF016;
     -webkit-text-shadow: 6px 6px 0px rgba(127, 255, 0, 1);
     -moz-text-shadow:    6px 6px 0px rgba(127, 255, 0, 1);
@@ -129,7 +129,7 @@ button:active {
 }
 .cell-6.display-on {
     display: block;
-    margin-top: 8%;
+    margin-top: 3%;
     animation: bounce-in 0.5s;
 }
 /* button slide in animation */

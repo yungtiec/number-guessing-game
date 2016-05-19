@@ -9,8 +9,6 @@ function Game() {
   this.guesses = [];
 }
 
-
-
 (function(gamePrototype) {
 
   // Fetch the Players Guess
@@ -143,6 +141,7 @@ function Game() {
     $("div.cell-4").fadeIn();
     $("div.cell-5").fadeIn();
   }
+  
 })(Game.prototype)
 
 // Generate the Winning Number
@@ -166,13 +165,13 @@ function animateText() {
 // button slide-in animation
 
 function animateButton() {
-    $(".button-cell").addClass("slide");
-    $(".button-cell").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
-    function(e) {
-        $(".cell-3").css("left","2%");
-        $(".cell-4").css("right","8%");
-        $(".cell-5").css("left","2%");
-        $(".button-cell").removeClass("slide");
+  $(".button-cell").addClass("slide");
+  $(".button-cell").one('webkitAnimationEnd oanimationend msAnimationEnd animationend',   
+  function(e) {
+    $(".cell-3").css("left","2%");
+    $(".cell-4").css("right","8%");
+    $(".cell-5").css("left","2%");
+    $(".button-cell").removeClass("slide");
   });
 }
 
