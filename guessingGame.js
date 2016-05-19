@@ -179,7 +179,6 @@ function animateButton() {
 // Winning message animation
 
 function showWinningMessage() {
-  $("#reset").html("PLAY AGAIN?")
   $("#textfield").hide();
   $("div.cell-3").animate({left: "-100%"}, 1000, function() {
     $(this).hide()
