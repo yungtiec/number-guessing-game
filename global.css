@@ -1,3 +1,10 @@
+body {
+  overflow-x: hidden;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+}
 .container {
     display: -webkit-flex; /* Safari */
     display: flex;
@@ -5,12 +12,12 @@
     flex-direction: column;
     -webkit-align-items: center; /* Safari */
     align-items: center;
+    -webkit-justify-content: center;
     justify-content: center;
     min-height: 100vh;
 }
 .cell {
     position: relative;
-    top: 20%;
 }     
 #number {
     font-family: 'Oswald', sans-serif;
@@ -34,6 +41,7 @@
 }
 ::-webkit-input-placeholder {
     color: #4CF016;
+    opacity: 1;
     -webkit-text-shadow: 6px 6px 0px rgba(127, 255, 0, 1);
     -moz-text-shadow:    6px 6px 0px rgba(127, 255, 0, 1);
     text-shadow:         6px 6px 0px rgba(127, 255, 0, 1);
@@ -41,13 +49,14 @@
 
 :-moz-placeholder { /* Firefox 18- */
     color: #4CF016;  
+    opacity: 1;
     -webkit-text-shadow: 6px 6px 0px rgba(127, 255, 0, 1);
     -moz-text-shadow:    6px 6px 0px rgba(127, 255, 0, 1);
     text-shadow:         6px 6px 0px rgba(127, 255, 0, 1);
 }
-
 ::-moz-placeholder {  /* Firefox 19+ */
     color: #4CF016;  
+    opacity: 1;
     -webkit-text-shadow: 6px 6px 0px rgba(127, 255, 0, 1);
     -moz-text-shadow:    6px 6px 0px rgba(127, 255, 0, 1);
     text-shadow:         6px 6px 0px rgba(127, 255, 0, 1);
@@ -72,6 +81,9 @@
     animation-duration: 2s;
     animation-timing-function: ease;
     animation-iteration-count: 1;   
+}
+[disabled] {
+  background-color:white;
 }
 button {
     font-family: 'Oswald', sans-serif;
